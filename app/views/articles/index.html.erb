@@ -1,0 +1,18 @@
+<div class="navbar p-2 d-flex justify-content-between bg-secondary bg-opacity-10 p-3 border-bottom">
+  <%=link_to "Wikinimous", articles_path, class: "fs-6 fw-normal text-muted text-decoration-none mb-0 ms-3" %>
+  <%=link_to "New article", new_article_path, class: "text-decoration-none text-muted"%>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-6 mt-5">
+  <% @articles.each do |article| %>
+   <ul>
+     <li class="row">
+       <%=link_to article.title, article_path(article), class: "p-0 fs-3 text-primary text-decoration-none"%>
+       <%= article.content.to_s.split('.').first %>
+     </li>
+   </ul>
+  <% end %>
+  </div>
+</div>

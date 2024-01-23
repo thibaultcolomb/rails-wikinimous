@@ -1,0 +1,17 @@
+<div class="navbar p-2 d-flex justify-content-between bg-secondary bg-opacity-10 p-3 border-bottom">
+  <%=link_to "Wikinimous", articles_path, class: "fs-6 fw-normal text-muted text-decoration-none mb-0 ms-3" %>
+  <%=link_to "New article", new_article_path, class: "text-decoration-none text-muted"%>
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-6">
+    <h1>Editing Article</h1>
+    <%= render "form", article: @article %>
+    <div>
+      <%= link_to "show", article_path(@article) %>
+      <%= link_to "back", articles_path %>
+    </div>
+
+  </div>
+</div>
